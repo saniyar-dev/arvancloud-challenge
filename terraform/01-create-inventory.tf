@@ -25,6 +25,6 @@ resource "null_resource" "ansible-provision" {
   }
 
   provisioner "local-exec" {
-    command = "../scripts/setup-ansible-inventory.sh"
+    command = "../scripts/setup-ansible-inventory.sh ${join(" ", concat(tolist([arvan_iaas_abrak.master_node.addresses[0]]), [for node in module.worker_nodes : node.worker_node_detail.addresses[0]]))}"
   }
 }
