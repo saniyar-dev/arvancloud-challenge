@@ -9,6 +9,7 @@ SCRIPT_DIR=$(dirname "$(realpath "$0")")
 PARENT_DIR=$(dirname "$SCRIPT_DIR")
 echo $PARENT_DIR
 
+python3 -m venv $PARENT_DIR/ansible-venv
 source $PARENT_DIR/ansible-venv/bin/activate
 pip install -r $PARENT_DIR/kubespray/requirements.txt
 cp -rfp $PARENT_DIR/kubespray/inventory/sample $PARENT_DIR/kubespray/inventory/mycluster
