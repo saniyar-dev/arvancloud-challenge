@@ -2,4 +2,6 @@ terraform/.terraform*
 terraform/terraform.tfstate*
 terraform/tfplan
 ansible-venv
-kubeconfig.conf
+
+**/kubeconfig.conf
+**/ansible.log
