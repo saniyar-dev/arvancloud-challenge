@@ -1,0 +1,4 @@
+[submodule "kubespray"]
+	path = kubespray
+	url = git@github.com:saniyar-dev/kubespray.git
+	branch = arvan-saniyar-cluster

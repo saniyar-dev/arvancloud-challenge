@@ -1,0 +1,7 @@
+terraform/.terraform*
+terraform/terraform.tfstate*
+terraform/tfplan
+ansible-venv
+
+**/kubeconfig.conf
+**/ansible.log
