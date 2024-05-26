@@ -23,4 +23,8 @@ resource "null_resource" "ansible-provision" {
   provisioner "local-exec" {
     command =  "echo \"\n[k8s-cluster:children]\nkube-node\nkube-master\" >> ../kubespray/inventory/inventory"
   }
+
+  provisioner "local-exec" {
+    command = "../scripts/setup-ansible-inventory.sh ${join(" ", concat(tolist([arvan_iaas_abrak.master_node.addresses[0]]), [for node in module.worker_nodes : node.worker_node_detail.addresses[0]]))}"
+  }
 }
